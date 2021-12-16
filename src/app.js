@@ -1,6 +1,7 @@
 const process = require('process');
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { initialize } = require('express-openapi');
 const swaggerUi = require('swagger-ui-express');
 const path = require('path/posix');
@@ -9,6 +10,8 @@ require('dotenv').config();
 const port = process.env.PORT;
 
 const app = express();
+
+app.use(cors());
 
 initialize({
     app,
