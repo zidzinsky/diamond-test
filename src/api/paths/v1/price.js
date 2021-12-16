@@ -18,7 +18,7 @@ module.exports = function () {
             }
 
             const response = {
-                sucess: true,
+                success: true,
                 value: price,
                 currency: '$'
             };
