@@ -30,9 +30,22 @@ app.use(
 );
 
 app.use((err, req, res, next) => {
+    const { status, errors = [] } = err;
+
+    if (status === 400) {
+        res.status(400).json({
+            success: false,
+            msg: 'Invalid Request',
+            errors: errors.map((e) => {
+                return { msg: `${e.path} ${e.message}` };
+            })
+        });
+        return;
+    }
+
     res.status(500).json({
         success: false,
-        msg: 'Something went wrong'
+        msg: 'Something went wrong.'
     });
 });
 

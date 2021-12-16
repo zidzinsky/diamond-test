@@ -5,7 +5,9 @@ module.exports = function () {
 
     operations.post = (req, res, next) => {
         try {
-            const price = priceCalculationService.calculatePrice(req.body);
+            const { body = {} } = req;
+
+            const price = priceCalculationService.calculatePrice(body);
 
             if (!price) {
                 res.status(404).json({
