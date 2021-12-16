@@ -10,7 +10,8 @@ const apiDoc = {
             type: 'object',
             properties: {
                 carat: {
-                    type: 'number'
+                    type: 'number',
+                    minimum: 0
                 },
                 cut: {
                     type: 'string',
