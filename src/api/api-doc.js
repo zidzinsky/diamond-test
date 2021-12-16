@@ -13,13 +13,16 @@ const apiDoc = {
                     type: 'number'
                 },
                 cut: {
-                    type: 'string'
+                    type: 'string',
+                    enum: ['Heart', 'Round', 'Square', 'Triangle', 'Oval']
                 },
                 color: {
-                    type: 'string'
+                    type: 'string',
+                    enum: ['D', 'E', 'F', 'G', 'H', 'I', 'J']
                 },
                 clarity: {
-                    type: 'string'
+                    type: 'string',
+                    enum: ['IF', 'VVS1', 'VVS2', 'VS1', 'VS2', 'SI1', 'SI2']
                 }
             },
             required: ['carat', 'cut', 'color', 'clarity']
@@ -32,6 +35,9 @@ const apiDoc = {
                 },
                 value: {
                     type: 'number'
+                },
+                currency: {
+                    type: 'string'
                 }
             }
         }

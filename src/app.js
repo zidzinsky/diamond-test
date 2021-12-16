@@ -29,6 +29,13 @@ app.use(
     })
 );
 
+app.use((err, req, res, next) => {
+    res.status(500).json({
+        success: false,
+        msg: 'Something went wrong'
+    });
+});
+
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
