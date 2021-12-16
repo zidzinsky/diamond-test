@@ -12,6 +12,7 @@ module.exports = function () {
                     sucess: false,
                     msg: 'Can not find price for such diamond.'
                 });
+                return;
             }
 
             const response = {
